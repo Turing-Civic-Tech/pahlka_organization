@@ -18,17 +18,13 @@ require 'omniauth'
 RSpec.configure do |config|
   OmniAuth.config.test_mode = true
   OmniAuth.config.mock_auth[:github] = {
+   "uid" => '3482342',
    "info" => {
      "name" => 'Bob Huggins',
      "email" => 'Bobby@thegmails.com',
-     "image" => 'capybarawontseeitanyway.jpg'
-   },
-   "credentials" => {
-     "token" => "3jdewidjiew0",
-     "refresh_token" => "hamburgler",
-     "expires_at" => 14232525,
-       }
+     "image" => 'BobHuggins.jpg'
      }
+   }
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
