@@ -45,6 +45,7 @@ group :development, :test do
   gem 'figaro'
   gem 'omniauth'
   gem 'omniauth-github'
+  gem 'brakeman'
 end
 
 group :development do
