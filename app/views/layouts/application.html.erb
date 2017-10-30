@@ -8,6 +8,9 @@
     <%= javascript_include_tag 'application' %>
   </head>
   <body>
-    <%= yield %>
+   <% if flash[:message] -%>
+   <p class="message"><%= flash[:message] %></p>
+   <% end -%>
+   <%= yield %>
   </body>
 </html>
