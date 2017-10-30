@@ -43,6 +43,9 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'rubycritic'
+  gem 'figaro'
+  gem 'omniauth'
+  gem 'omniauth-github'
 end
 
 group :development do
