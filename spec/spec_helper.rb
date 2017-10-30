@@ -23,7 +23,10 @@ RSpec.configure do |config|
      "name" => 'Bob Huggins',
      "email" => 'Bobby@thegmails.com',
      "image" => 'BobHuggins.jpg'
-     }
+   },
+   "credentials" => {
+     "token" => "thisisnotarealtokenbub"
+   }
    }
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
