@@ -9,7 +9,7 @@
   </head>
   <body>
    <% if flash[:message] -%>
-   <p class="message"><%= flash[:message] %></p>
+    <p class="flash_message"><%= flash[:message] %></p>
    <% end -%>
    <%= yield %>
   </body>
