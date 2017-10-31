@@ -1,18 +1,29 @@
 class RepositoriesController < ApplicationController
   def index
-    response = GithubService.new(current_user.token, "Turing-Civic-Tech").get_org_repos
-    @repositories = RepositoryService.new(response).repositories
+    response = github_service.get_org_repos
+    @repositories = repository_service(response).repositories
   end
 
   def show
     repo = project_params[:id]
-    service = GithubService.new(current_user.token, "Turing-Civic-Tech")
-    contributors_response = service.get_repo_contributors(repo)
-    @contributors = ContributorService.new(contributors_response).contributors
+    contributors_response = github_service.get_repo_contributors(repo)
+    @contributors = contributor_service(contributor_service).contributors
     @open_pull_requests = service.get_repo_open_pull_requests(repo).count
   end
 
   private
+
+  def contributor_service(response)
+    @contributor_service ||= ContributorService.new(response)
+  end
+
+  def github_service
+    @github_service ||= GithubService.new(current_user.token, "Turing-Civic-Tech")
+  end
+
+  def repository_service(response)
+    @repository_service ||= RepositoryService.new(response)
+  end
 
   def project_params
     params.permit(:id)
