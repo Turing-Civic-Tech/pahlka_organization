@@ -1,4 +1,179 @@
-/*
+/* #FFFFFF white
+   #00171F black
+   #003459 prussian blue
+   #007EA7 cerulean blue
+   #00A8E8 vivid cerulean
+   #E84000 complementary orange*/
+
+* {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+body {
+/*   background-color: #9FCFDE; */
+  color: #00171F;
+}
+
+nav {
+  align-items: center;
+  background-color: #003459;
+  color: #FFFFFF;
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+}
+
+li {
+  border-bottom: solid #003459 2px;
+  border-left: solid white 2px;
+  display: inline-block;
+  list-style-type: none;
+  padding: 15px;
+}
+
+a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+li:hover a,
+li:hover {
+  color: #00A8E8;
+  color: #E84000;
+  cursor: pointer;
+}
+
+li:hover {
+  border-bottom: solid #00A8E8 2px;
+  border-bottom: solid #E84000 2px;
+}
+
+.turing-logo {
+  height: 50px;
+  width: 50px;
+}
+
+.github-link a {
+  color: black;
+  display: block;
+  margin: 20px auto;
+  text-decoration: underline;
+  width: 150px;
+}
+
+section {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.about-us-section {
+  align-items: center;
+  display: flex;
+  margin-bottom: 50px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 35px;
+  margin: 50px;
+}
+
+h2 {
+  margin: 30px;
+}
+
+.pahlka-img {
+  object-fit: cover;
+  width: 45%;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0 0 0 30px;
+}
+
+.carousel-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+.carousel-img {
+  height: 250px;
+  object-fit: cover;
+  width: 300px;
+}
+
+.modal-background {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  left: 0;
+  height: 100%;
+  top: 0;
+  position: fixed;
+  width: 100%;
+
+}
+
+.modal-content {
+  background-color: white;
+  border: 2px solid #003459;
+  margin: 100px auto;
+  padding: 20px;
+  position: relative;
+  width: 50%;
+}
+
+.input-label-div {
+  display: block;
+  margin: 10px auto;
+  width: 410px;
+}
+
+input {
+  font-size: 16px;
+  height: 25px;
+  margin: 5px;
+  width: 300px;
+}
+
+.btn-div {
+  margin: 0 auto;
+  width: 207px;
+}
+
+button {
+  background-color: #00A8E8;
+  font-size: 16px;
+  margin: 5px 0;
+  padding: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.cancel {
+  background-color: #E84000;
+  border: 1px solid #003459;
+  height: 20px;
+  text-align: center;
+  width: 20px;
+
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+
+.cancel:hover {
+  cursor: pointer;
+}/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
