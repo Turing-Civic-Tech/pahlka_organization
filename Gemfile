@@ -46,6 +46,7 @@ group :development, :test do
   gem 'launchy'
   gem 'rubycritic'
   gem 'figaro'
+  gem 'brakeman'
 end
 
 group :development do
