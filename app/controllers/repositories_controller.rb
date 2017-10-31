@@ -8,9 +8,7 @@ class RepositoriesController < ApplicationController
     repo = project_params[:id]
     service = GithubService.new(current_user.token, "Turing-Civic-Tech")
     contributors_response = service.get_repo_contributors(repo)
-    contributor_service = ContributorService.new(contributors_response)
-    @total = contributor_service.total
-    @contributors = contributor_service.contributors
+    @contributors = ContributorService.new(contributors_response).contributors
     @open_pull_requests = service.get_repo_open_pull_requests(repo).count
   end
 

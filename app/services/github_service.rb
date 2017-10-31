@@ -9,7 +9,6 @@ class GithubService
     HTTParty.get("https://api.github.com/#{api_path}",
     :headers => {"Authorization" => "token #{@token}",
     "User-Agent" => "Turing-Civic-Tech"}).parsed_response
-    # :headers=>{"Authorization"=>"Token token=\"a8d8ce14d2402a2e1912c25f39df770b\""}
   end
 
   def code_frequency(repo)
