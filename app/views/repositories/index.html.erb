@@ -1,0 +1,12 @@
+<h3> Pahlka Repositories </h3>
+
+<ul>
+<% num = 0 %>
+<% @repositories.each do |repo| %>
+<% num += 1 %>
+  <li><%= repo.name %></li>
+  <li><%= repo.language %></li>
+  <li><%= repo.description %></li>
+  <li><%= link_to "View Details", repository_path(repo.name), id: "repo_#{num}" %></li>
+<% end %>
+</ul>
