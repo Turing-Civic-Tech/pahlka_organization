@@ -25,7 +25,7 @@ RSpec.configure do |config|
      "image" => 'BobHuggins.jpg'
    },
    "credentials" => {
-     "token" => "thisisnotarealtokenbub"
+     "token" => "test"
    }
    }
   # rspec-expectations config goes here. You can use an alternate

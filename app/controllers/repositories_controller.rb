@@ -6,9 +6,9 @@ class RepositoriesController < ApplicationController
 
   def show
     repo = project_params[:id]
-    contributors_response = github_service.get_repo_contributors(repo)
-    @contributors = contributor_service(contributor_service).contributors
-    @open_pull_requests = service.get_repo_open_pull_requests(repo).count
+    contributor_response = github_service.get_repo_contributors(repo)
+    @contributors = contributor_service(contributor_response).contributors
+    @open_pull_requests = github_service.get_repo_open_pull_requests(repo).count
   end
 
   private
