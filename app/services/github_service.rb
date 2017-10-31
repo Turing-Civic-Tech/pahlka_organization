@@ -10,6 +10,10 @@ class GithubService
     :access_token => @token).parsed_response
   end
 
+  def code_frequency(repo)
+    request("repos/#{@owner}/#{@repo}/stats/code_frequency")
+  end
+
   def get_org_repos
     request("orgs/#{@owner}/repos", @token)
   end
