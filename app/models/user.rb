@@ -6,7 +6,16 @@ class User < ApplicationRecord
     name = auth_hash["info"]["name"]
     email = auth_hash["info"]["email"]
     image = auth_hash["info"]["image"]
-
-    find_or_create_by(uid: uid, username: name, image_path: image, email: email)
+    token = auth_hash["credentials"]["token"]
+    user = find_or_create_by(
+      uid: uid,
+    )
+    user.update(
+          username: name,
+          image_path: image,
+          email: email,
+          token: token
+    )
+    user
   end
 end

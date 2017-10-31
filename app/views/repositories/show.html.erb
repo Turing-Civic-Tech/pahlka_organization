@@ -1,0 +1,16 @@
+<h3> Project Details </h3>
+<p> Open Pull Requests: <%= @open_pull_requests %> </p>
+<p> Total Contributors: <%= @total %> </p>
+<br />
+<h3> Contributors </h3>
+<ul>
+<% num = 0 %>
+<% @contributors.each do |contributor| %>
+<% num += 1 %>
+  <li> <%= image_tag contributor.photo, size: "50x50" %> </li>
+  <li> Week of <%= contributor.start_day %> </li>
+  <li> Total Commits <%= contributor.commits_this_week %></li>
+  <li> Additions: <%= contributor.added_this_week %></li>
+  <li> Deletions: <%= contributor.deleted_this_week %></li>
+<% end %>
+</ul>
