@@ -1,2 +1,57 @@
-<h3>Home Page</h3>
-<%= link_to "log in with github", github_login_path %>
+<!-- <h3>Home Page</h3> -->
+<nav>
+  <a href="https://turing.io" target="_blank"><img class="turing-logo" src="https://pbs.twimg.com/profile_images/444146105312243712/EHdy1GyV.png" alt="Turing School of Software and Design Logo"></a>
+
+  <ul>
+    <li><a href="">ABOUT</a></li><li>
+      <a href="">PROJECTS</a></li><li>
+      <a href="">EVENTS</a></li><li>
+      <a href="">JOIN</a></li><li class="login-link">LOGIN</li>
+  </ul>
+</nav>
+
+
+<p class="github-link"><%= link_to "log in with github", github_login_path %></p>
+
+<h1>Pahlka Student Group</h1>
+<section class="about-us-section">
+  <img class="pahlka-img" src="https://media.npr.org/assets/img/2013/12/17/jenniferpahlka_2012-stageshot_wide-fae5a027471a968d817bbd2fd5947113f096307c.jpg?s=1400" alt="Jennifer Pahlka Speaking">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar posuere lorem. Fusce non purus nec mi rhoncus imperdiet non sit amet odio. Ut dictum fringilla nisi, non interdum velit sodales eget. Integer in tortor ultrices, consequat sapien in, dignissim enim. Quisque ullamcorper nisl at dui dignissim, at vulputate leo tincidunt. Integer nec placerat tellus. Fusce gravida ex libero, et dignissim ipsum tristique tristique. Proin lacus dui, fringilla sed ullamcorper consequat, sodales ut dolor. Fusce at venenatis purus, in accumsan enim. In nec cursus ex, non sodales ligula. In ac odio et diam ultricies convallis sed quis tortor. Phasellus faucibus elit eu justo viverra feugiat. Duis tincidunt congue ligula, maximus egestas dui tincidunt efficitur. Pellentesque tempus erat sit amet nibh tincidunt lacinia.</p>
+</section>
+<section class="highlighted-projects-section">
+  <h2>Highlighted Projects</h2>
+
+    <article>
+      <h3></h3>
+    </article>
+    <article>
+
+    </article>
+</section>
+
+
+<div class="modal-background">
+    <div class="modal-content">
+      <div class="cancel">x</div>
+      <form action="">
+        <div class="input-label-div">
+          <label for="username-input">Username: </label>
+          <input type="text" id="username-input">
+        </div>
+        <div class="input-label-div">
+          <label for="password-input">Password: </label>
+          <input type="password" id="password-input">
+        </div>
+        <div class="btn-div">
+          <button class="login-submit-btn">Log in</button>
+          <button class="github-login-btn">
+            <%= link_to "Log in with GitHub", github_login_path %>
+            <i class="fa fa-github" aria-hidden="true"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="../assets/javascripts/application.js"></script>
