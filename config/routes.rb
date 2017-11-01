@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   resources :user, only: [:show]
   resources :repositories, only: [:index, :show]
 
+  delete "remove_pm", to: 'project_managers#remove_pm', as: "remove_pm"
+  delete "remove_apm", to: 'project_managers#remove_apm', as: "remove_apm"
+  post "update_pm", to: 'project_managers#update_pm', as: "update_pm"
+  post "update_apm", to: 'project_managers#update_apm', as: "update_apm"
   get '/auth/github', as: :github_login
   get '/auth/github/callback', to: 'sessions#create'
 end
