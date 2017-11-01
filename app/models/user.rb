@@ -4,6 +4,7 @@ class User < ApplicationRecord
     uid = auth_hash["uid"]
 
     name = auth_hash["info"]["name"]
+    username = auth_hash["info"]["nickname"]
     email = auth_hash["info"]["email"]
     image = auth_hash["info"]["image"]
     token = auth_hash["credentials"]["token"]
@@ -11,7 +12,8 @@ class User < ApplicationRecord
       uid: uid,
     )
     user.update(
-          username: name,
+          name: name,
+          username: username,
           image_path: image,
           email: email,
           token: token
