@@ -39,6 +39,9 @@ class GithubService
     response = HTTParty.get("https://api.github.com/orgs/#{@org}/members/#{username}",
     :headers => {"Authorization" => "token #{@token}",
     "User-Agent" => "Turing-Civic-Tech"})
+    #if the API request returns with a 204 status code, that means success
+    #if the person is not a member of the civic tech group, it will return with
+    #a different code
     if response.code == 204
       true
     else
