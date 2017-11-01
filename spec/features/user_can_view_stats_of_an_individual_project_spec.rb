@@ -8,8 +8,7 @@ feature "An authenticated user can view their dashboard" do
 
   click_on "repo_1"
 
-  expect(page).to have_content('Pull Requests: 10')
-  expect(page).to have_content('Commits: 5')
-  expect(page).to have_content('Contributors: 1')
+  expect(page).to have_content('Pull Requests: 0')
+  expect(page).to have_content('Commits: 19')
   end
 end
