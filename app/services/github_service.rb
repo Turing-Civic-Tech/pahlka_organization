@@ -6,7 +6,7 @@ class GithubService
   end
 
   def request(api_path)
-    if @token = "test"
+    if @token == "test"
       HTTParty.get("https://api.github.com/#{api_path}")
       .parsed_response
     else

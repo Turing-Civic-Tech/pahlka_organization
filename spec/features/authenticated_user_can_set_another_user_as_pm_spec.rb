@@ -1,26 +1,24 @@
 require 'rails_helper'
 
 feature "An authenticated user can view their dashboard" do
-  xit "shows their dashboard page" do
+  it "shows their dashboard page and lets them update PM and APM" do
   visit github_login_path
 
   click_on "repositories"
 
   click_on "repo_1"
-
+  save_and_open_page
   expect(page).to have_button('Set PM')
   expect(page).to have_button('Set APM')
 
-  select("Brandon Stewart", from: "Set PM").select_option
+  select("Bob Huggins", from: "PM").select_option
+  click_on "set_pm"
 
-#   From the project show page
-# I should see the two project managers who are assigned to a particular project
-# I should see their portrait and name
-# Below their portrait and name
-# I should see a button to add/modify the PM and APM
-# When I click on the button to add/modify the PM/APM I
-# should see a dropdown of all of the members of the posse
-#  to select from.
+  expect(page).to have_content('Project Manager: Bob Huggins')
 
+  select("Bob Huggins", from: "APM").select_option
+  click_on "set_apm"
+
+  expect(page).to have_content('Assistant Project Manager: Bob Huggins')
   end
 end

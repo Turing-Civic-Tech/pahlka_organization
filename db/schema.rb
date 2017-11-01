@@ -23,7 +23,8 @@ ActiveRecord::Schema.define(version: 20171031214731) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "token"
-    t.integer "repository_id"
+    t.string "repository_name"
+    t.string "role"
   end
 
 end
