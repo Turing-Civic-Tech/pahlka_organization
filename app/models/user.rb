@@ -1,22 +1,31 @@
 class User < ApplicationRecord
 
   def self.find_or_create_from_auth_hash(auth_hash)
-    uid = auth_hash["uid"]
+    if part_of_org?(auth_hash)
+      uid = auth_hash["uid"]
+      name = auth_hash["info"]["name"]
+      email = auth_hash["info"]["email"]
+      image = auth_hash["info"]["image"]
+      token = auth_hash["credentials"]["token"]
+      user = find_or_create_by(
+        uid: uid,
+      )
+      user.update(
+            username: name,
+            image_path: image,
+            email: email,
+            token: token
+      )
+      user
+    else
+      false
+    end
+  end
 
-    name = auth_hash["info"]["name"]
-    email = auth_hash["info"]["email"]
-    image = auth_hash["info"]["image"]
-    token = auth_hash["credentials"]["token"]
-    user = find_or_create_by(
-      uid: uid,
-    )
-    user.update(
-          username: name,
-          image_path: image,
-          email: email,
-          token: token
-    )
-    user
+  def self.part_of_org?(auth_hash)
+    orgs = auth_hash["extra"]["raw_info"]["organizations_url"]
+    orgs_json = HTTParty.get(orgs).parsed_response
+    part_of_org = orgs_json.any? { |hash| hash["login"]["Turing-Civic-Tech"] }
   end
 
   def self.unassign_pm(repo)
