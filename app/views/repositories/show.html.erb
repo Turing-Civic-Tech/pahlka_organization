@@ -1,10 +1,10 @@
 <h3> Project Details </h3>
 <p> Open Pull Requests: <%= @open_pull_requests %> </p>
 <p> <%= image_tag @pm.image_path, size: "30x30" %>
-  Project Manager: <%= @pm.username %> </p>
+  Project Manager: <%= @pm.name %> </p>
   <%= link_to 'Remove PM', remove_pm_path(repo_name: @repo), method: :delete %>
 <p> <%= image_tag @apm.image_path, size: "30x30" %>
-  Assistant Project Manager: <%= @apm.username %> </p>
+  Assistant Project Manager: <%= @apm.name %> </p>
   <%= link_to 'Remove APM', remove_apm_path(repo_name: @repo), method: :delete %>
 <br />
 <h3> Contributors </h3>
