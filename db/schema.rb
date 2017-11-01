@@ -25,7 +25,10 @@ ActiveRecord::Schema.define(version: 20171101213507) do
     t.string "token"
     t.string "repository_name"
     t.string "role"
+<<<<<<< HEAD
     t.string "name"
+=======
+>>>>>>> development
   end
 
 end

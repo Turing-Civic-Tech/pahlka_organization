@@ -15,6 +15,9 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'omniauth'
 
+require 'simplecov'
+SimpleCov.start
+
 RSpec.configure do |config|
   OmniAuth.config.test_mode = true
   OmniAuth.config.mock_auth[:github] = {
@@ -25,9 +28,14 @@ RSpec.configure do |config|
      "image" => 'BobHuggins.jpg'
    },
    "credentials" => {
-     "token" => "thisisnotarealtokenbub"
+     "token" => "test"
+   },
+   "extra" => {
+     "raw_info" => {
+       "organizations_url" => "https://api.github.com/users/boveus/orgs"
+     }
    }
-   }
+  }
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
