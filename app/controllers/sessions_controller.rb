@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     else
       flash[:message] = "You must be a part of the Turing-Civic-Tech GitHub
       organization to access this part of the site"
+      redirect_to :root
     end
   end
 
