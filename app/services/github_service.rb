@@ -36,9 +36,13 @@ class GithubService
   end
 
   def part_of_org?(username)
-    HTTParty.get("https://api.github.com/orgs/#{@org}/members/#{username}",
+    response = HTTParty.get("https://api.github.com/orgs/#{@org}/members/#{username}",
     :headers => {"Authorization" => "token #{@token}",
     "User-Agent" => "Turing-Civic-Tech"})
-    request()
+    if response.code == 204
+      true
+    else
+      false
+    end
   end
 end

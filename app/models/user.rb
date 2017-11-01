@@ -27,8 +27,7 @@ class User < ApplicationRecord
   end
 
   def self.part_of_org?(username, token, org)
-    response = GithubService.new(token, org).part_of_org?(username)
-    binding.pry
+    GithubService.new(token, org).part_of_org?(username)
   end
 
   def self.unassign_pm(repo)
