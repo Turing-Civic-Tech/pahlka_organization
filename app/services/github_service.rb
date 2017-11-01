@@ -6,9 +6,14 @@ class GithubService
   end
 
   def request(api_path)
-    HTTParty.get("https://api.github.com/#{api_path}",
-    :headers => {"Authorization" => "token #{@token}",
-    "User-Agent" => "Turing-Civic-Tech"}).parsed_response
+    if @token == "test"
+      HTTParty.get("https://api.github.com/#{api_path}")
+      .parsed_response
+    else
+      HTTParty.get("https://api.github.com/#{api_path}",
+      :headers => {"Authorization" => "token #{@token}",
+      "User-Agent" => "Turing-Civic-Tech"}).parsed_response
+    end
   end
 
   def code_frequency(repo)

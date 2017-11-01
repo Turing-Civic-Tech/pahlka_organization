@@ -12,3 +12,12 @@
 //
 //= require rails-ujs
 //= require_tree .
+
+
+$('.login-link').on('click', function() {
+   $('.modal-background').show();
+});
+
+$('.cancel').on('click', function() {
+  $('.modal-background').hide();
+});
