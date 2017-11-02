@@ -14,13 +14,13 @@
 //= require jquery3
 //= require jquery_ujs
 //= require_tree .
-console.log('javascript file');
 
-$('.login-link').on('click', function() {
-  console.log('jquery clickkkkk');
-   $('.modal-background').show();
-});
+$(document).ready(function() {
+  $('.login-link').on('click', function() {
+    $('.modal-background').show();
+  });
 
-$('.cancel').on('click', function() {
-  $('.modal-background').hide();
+  $('.cancel').on('click', function() {
+    $('.modal-background').hide();
+  });
 });
