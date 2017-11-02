@@ -1,0 +1,36 @@
+sudo: false
+dist: trusty
+cache: bundler
+language: ruby
+bundler_args: --without debugging
+script: bundle exec rake ci
+rvm:
+  - 2.1
+  - 2.2
+  - 2.3
+  - 2.4
+  - jruby-9.1.7.0
+  - jruby-head
+  - ruby-head
+  - rubinius-3
+matrix:
+  allow_failures:
+    - rvm: jruby-9.1.7.0
+    - rvm: jruby-head
+    - rvm: ruby-head
+    - rvm: rubinius-3
+  fast_finish: true
+before_install:
+  - rvm use @global
+  - gem uninstall bundler -x
+  - gem install bundler --version=1.13.7
+  - bundler --version
+notifications:
+  email:
+    - timo.roessner@googlemail.com
+    - matijs@matijs.net
+    - chastell@chastell.net
+  irc: irc.freenode.org#reek
+branches:
+  only:
+    - master

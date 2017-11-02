@@ -1,0 +1,15 @@
+current directory: /Users/katiescruggs/Desktop/turing/other-projects/pahlka_organization/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+/usr/local/opt/ruby/bin/ruby -r ./siteconf20171101-74074-1ttrd3.rb extconf.rb
+creating Makefile
+
+current directory: /Users/katiescruggs/Desktop/turing/other-projects/pahlka_organization/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /Users/katiescruggs/Desktop/turing/other-projects/pahlka_organization/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.bundle
+
+current directory: /Users/katiescruggs/Desktop/turing/other-projects/pahlka_organization/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20171101-74074-158ircj/bindex
