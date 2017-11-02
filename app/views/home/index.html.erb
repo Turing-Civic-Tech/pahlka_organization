@@ -1,12 +1,12 @@
 <!-- <h3>Home Page</h3> -->
 <nav>
-  <a href="https://turing.io" target="_blank"><img class="turing-logo" src="https://pbs.twimg.com/profile_images/444146105312243712/EHdy1GyV.png" alt="Turing School of Software and Design Logo"></a>
+  <a href="https://turing.io" target="_blank"><img class="turing-logo" src="../../assets/images/turing-logo.png" alt="Turing School of Software and Design Logo"></a>
 
   <ul>
-    <li><a href="">ABOUT</a></li><li>
-      <a href="">PROJECTS</a></li><li>
-      <a href="">EVENTS</a></li><li>
-      <a href="">JOIN</a></li><li class="login-link">LOGIN</li>
+    <li class="nav-menu-item"><a href="../../" class="nav-link">ABOUT</a></li><li class="nav-menu-item">
+      <a class="nav-link" href="../../repositories">PROJECTS</a></li><li class="nav-menu-item">
+      <a class="nav-link" href="">EVENTS</a></li><li class="nav-menu-item">
+      <a class="nav-link" href="../../user/1">JOIN</a></li><li class="login-link nav-menu-item">LOGIN</li>
   </ul>
 </nav>
 
@@ -43,8 +43,8 @@
           <input type="password" id="password-input">
         </div>
         <div class="btn-div">
-          <button class="login-submit-btn">Log in</button>
-          <button class="github-login-btn">
+          <button class="login-submit-btn login-btn">Log in</button>
+          <button class="github-login-btn login-btn">
             <%= link_to "Log in with GitHub", github_login_path %>
             <i class="fa fa-github" aria-hidden="true"></i>
           </button>
