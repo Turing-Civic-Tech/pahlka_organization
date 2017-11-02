@@ -36,9 +36,13 @@ class GithubService
   end
 
   def part_of_org?(username)
-    response = HTTParty.get("https://api.github.com/orgs/#{@org}/members/#{username}",
-    :headers => {"Authorization" => "token #{@token}",
-    "User-Agent" => "Turing-Civic-Tech"})
+    if @token == "test"
+      response = HTTParty.get("https://api.github.com/orgs/#{@org}/members/#{username}")
+    else
+      response = HTTParty.get("https://api.github.com/orgs/#{@org}/members/#{username}",
+      :headers => {"Authorization" => "token #{@token}",
+      "User-Agent" => "Turing-Civic-Tech"})
+    end
     #if the API request returns with a 204 status code, that means success
     #if the person is not a member of the civic tech group, it will return with
     #a different code

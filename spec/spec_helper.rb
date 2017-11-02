@@ -23,6 +23,7 @@ RSpec.configure do |config|
   OmniAuth.config.mock_auth[:github] = {
    "uid" => '3482342',
    "info" => {
+     "nickname" => 'boveus',
      "name" => 'Bob Huggins',
      "email" => 'Bobby@thegmails.com',
      "image" => 'BobHuggins.jpg'

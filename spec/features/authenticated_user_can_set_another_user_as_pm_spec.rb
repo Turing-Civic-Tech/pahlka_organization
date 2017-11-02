@@ -3,7 +3,6 @@ require 'rails_helper'
 feature "An authenticated user can view their dashboard" do
   it "shows their dashboard page and lets them update PM and APM" do
   visit github_login_path
-
   click_on "repositories"
 
   click_on "repo_1"
