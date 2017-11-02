@@ -30,6 +30,8 @@ class User < ApplicationRecord
     GithubService.new(token, org, username).part_of_org?
   end
 
+  #extract to PM service
+
   def self.unassign_pm(repo)
     user = self.find_by(role: "PM", repository_name: repo)
     if user

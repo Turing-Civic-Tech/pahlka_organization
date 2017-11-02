@@ -6,6 +6,7 @@ class GithubService
   end
 
   def request(api_path)
+    #get rid of this, populate a test user in the DB
     if @token == "test"
       HTTParty.get("https://api.github.com/#{api_path}")
       .parsed_response
@@ -49,7 +50,7 @@ class GithubService
     end
     #if the API request returns with a 204 status code, that means success
     #if the person is not a member of the civic tech group, it will return with
-    #a different code
+    #a different code <add doc>
     if response.code == 204
       true
     else
