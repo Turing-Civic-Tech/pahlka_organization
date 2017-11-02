@@ -1,7 +1,6 @@
 class UserController < ApplicationController
   def show
     events = github_service.get_org_events
-    binding.pry 
   end
 
   private
