@@ -153,6 +153,11 @@ input {
   padding: 5px;
 }
 
+.login-btn a {
+  color: black;
+  text-decoration: none;
+}
+
 .login-btn:hover {
   cursor: pointer;
 }
