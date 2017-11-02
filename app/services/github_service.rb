@@ -1,8 +1,8 @@
 class GithubService
-  def initialize(token, org, query = nil)
+  def initialize(token, org, username = nil)
     @token = token
     @org = org
-    @query = query
+    @username = username
   end
 
   def request(api_path)
@@ -35,11 +35,15 @@ class GithubService
     request("repos/#{@org}/#{repo}/pulls")
   end
 
-  def part_of_org?(username)
+  def get_org_events
+    request("orgs/github/events")
+  end
+
+  def part_of_org?
     if @token == "test"
-      response = HTTParty.get("https://api.github.com/orgs/#{@org}/members/#{username}")
+      response = HTTParty.get("https://api.github.com/orgs/#{@org}/members/#{@username}")
     else
-      response = HTTParty.get("https://api.github.com/orgs/#{@org}/members/#{username}",
+      response = HTTParty.get("https://api.github.com/orgs/#{@org}/members/#{@username}",
       :headers => {"Authorization" => "token #{@token}",
       "User-Agent" => "Turing-Civic-Tech"})
     end

@@ -15,11 +15,12 @@
 //= require jquery_ujs
 //= require_tree .
 
+$(document).ready(function() {
+  $('.login-link').on('click', function() {
+    $('.modal-background').show();
+  });
 
-$('.login-link').on('click', function() {
-   $('.modal-background').show();
-});
-
-$('.cancel').on('click', function() {
-  $('.modal-background').hide();
+  $('.cancel').on('click', function() {
+    $('.modal-background').hide();
+  });
 });

@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   def index
   end
 
-  protected
+  private
 
   def auth_hash
     request.env['omniauth.auth']
