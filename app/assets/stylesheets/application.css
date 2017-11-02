@@ -24,7 +24,7 @@ nav {
   justify-content: space-between;
 }
 
-li {
+.nav-menu-item {
   border-bottom: solid #003459 2px;
   border-left: solid white 2px;
   display: inline-block;
@@ -32,21 +32,19 @@ li {
   padding: 15px;
 }
 
-a {
+.nav-link {
   color: #FFFFFF;
   text-decoration: none;
 }
 
-li:hover a,
-li:hover {
+.nav-menu-item:hover .nav-link,
+.nav-menu-item:hover {
   color: #00A8E8;
-  color: #E84000;
   cursor: pointer;
 }
 
-li:hover {
+.nav-menu-item:hover {
   border-bottom: solid #00A8E8 2px;
-  border-bottom: solid #E84000 2px;
 }
 
 .turing-logo {
@@ -148,14 +146,19 @@ input {
   width: 207px;
 }
 
-button {
+.login-btn {
   background-color: #00A8E8;
   font-size: 16px;
   margin: 5px 0;
   padding: 5px;
 }
 
-button:hover {
+.login-btn a {
+  color: black;
+  text-decoration: none;
+}
+
+.login-btn:hover {
   cursor: pointer;
 }
 
