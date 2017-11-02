@@ -1,0 +1,8 @@
+<p> <%= image_tag @pm.image_path, size: "30x30" %>
+  Project Manager: <%= @pm.name %> </p>
+  <%= form_tag(:controller => 'project_managers', :action => 'update_pm') do %>
+  <li> Set PM: <%= select_tag "PM", options_from_collection_for_select(@users, 'id', 'name') %></li>
+  <%= hidden_field_tag :repo_name, @repo %>
+  <li>  <%= submit_tag("Set PM", id: "set_pm") %> </li>
+  <%= link_to 'Remove PM', remove_pm_path(repo_name: @repo), method: :delete %>
+  <% end %>

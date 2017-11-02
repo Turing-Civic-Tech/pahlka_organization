@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     @user = User.find_or_create_from_auth_hash(auth_hash)
     if @user
       session[:uid] = @user.uid
-      flash[:message] = "Welcome, #{current_user.username}"
+      flash[:message] = "Welcome, #{current_user.name}"
       redirect_to @user
     else
       flash[:message] = "You must be a part of the Turing-Civic-Tech GitHub

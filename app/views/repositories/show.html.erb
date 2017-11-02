@@ -1,33 +1,9 @@
 <h3> Project Details </h3>
 <p> Open Pull Requests: <%= @open_pull_requests %> </p>
-<p> <%= image_tag @pm.image_path, size: "30x30" %>
-  Project Manager: <%= @pm.username %> </p>
-  <%= link_to 'Remove PM', remove_pm_path(repo_name: @repo), method: :delete %>
-<p> <%= image_tag @apm.image_path, size: "30x30" %>
-  Assistant Project Manager: <%= @apm.username %> </p>
-  <%= link_to 'Remove APM', remove_apm_path(repo_name: @repo), method: :delete %>
+<%= render partial: "pm_form" %>
+<%= render partial: "apm_form" %>
 <br />
+
 <h3> Contributors </h3>
-<ul>
-<% num = 0 %>
-<% @contributors.each do |contributor| %>
-<% num += 1 %>
-  <p> Total Commits: <%= contributor.total_commits %> </p>
-  <li> <%= image_tag contributor.photo, size: "50x50" %> </li>
-  <li> Week of <%= contributor.start_day  %> </li>
-  <li> Total Commits this week: <%= contributor.commits_this_week %></li>
-  <li> Additions: <%= contributor.added_this_week %></li>
-  <li> Deletions: <%= contributor.deleted_this_week %></li>
-  <br />
-  <%= form_tag(:controller => 'project_managers', :action => 'update_pm') do %>
-  <li> Set PM: <%= select_tag "PM", options_from_collection_for_select(@users, 'id', 'username') %></li>
-  <%= hidden_field_tag :repo_name, @repo %>
-  <li>  <%= submit_tag("Set PM", id: "set_pm") %> </li>
-  <% end %>
-  <%= form_tag(:controller => 'project_managers', :action => 'update_apm') do %>
-  <li> Set APM: <%= select_tag "APM", options_from_collection_for_select(@users, 'id', 'username') %></li>
-  <%= hidden_field_tag :repo_name, @repo %>
-  <li>  <%= submit_tag("Set APM", id: "set_apm") %> </li>
-  <% end %>
-<% end %>
+<%= render partial: "contributors" %>
 </ul>

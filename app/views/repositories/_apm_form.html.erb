@@ -1,0 +1,8 @@
+<p> <%= image_tag @apm.image_path, size: "30x30" %>
+  Assistant Project Manager: <%= @apm.name %> </p>
+  <%= form_tag(:controller => 'project_managers', :action => 'update_apm') do %>
+  <li> Set APM: <%= select_tag "APM", options_from_collection_for_select(@users, 'id', 'name') %></li>
+  <%= hidden_field_tag :repo_name, @repo %>
+  <li>  <%= submit_tag("Set APM", id: "set_apm") %> </li>
+  <%= link_to 'Remove APM', remove_apm_path(repo_name: @repo), method: :delete %>
+  <% end %>
