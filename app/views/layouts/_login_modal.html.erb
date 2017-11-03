@@ -1,0 +1,22 @@
+<div class="modal-background">
+    <div class="modal-content">
+      <div class="cancel">x</div>
+      <form action="">
+        <div class="input-label-div">
+          <label for="username-input">Username: </label>
+          <input type="text" id="username-input">
+        </div>
+        <div class="input-label-div">
+          <label for="password-input">Password: </label>
+          <input type="password" id="password-input">
+        </div>
+        <div class="btn-div">
+          <button class="login-submit-btn login-btn">Log in</button>
+          <button class="github-login-btn login-btn">
+            <%= link_to "Log in with GitHub", github_login_path %>
+            <i class="fa fa-github" aria-hidden="true"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
