@@ -50,7 +50,7 @@ class GithubService
     end
     #if the API request returns with a 204 status code, that means success
     #if the person is not a member of the civic tech group, it will return with
-    #a different code <add doc>
+    #a different code https://developer.github.com/v3/orgs/members/#check-membership
     if response.code == 204
       true
     else
