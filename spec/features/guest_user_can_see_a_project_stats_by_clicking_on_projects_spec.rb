@@ -4,7 +4,7 @@ feature "A user can view projects" do
   it "shows project stats when visiting /repositories" do
   visit github_login_path
 
-  click_on "repositories"
+  click_on "REPOSITORIES"
 
   expect(page).to have_content('Pahlka Repositories')
   expect(page).to have_content("pahlka_organization")
