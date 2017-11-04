@@ -6,7 +6,7 @@ feature "An authenticated user can view their dashboard" do
   click_on "REPOSITORIES"
 
   click_on "repo_1"
-  save_and_open_page
+
   expect(page).to have_button('Set PM')
   expect(page).to have_button('Set APM')
 

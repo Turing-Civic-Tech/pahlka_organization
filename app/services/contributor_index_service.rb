@@ -7,7 +7,6 @@ class ContributorIndexService
   end
 
   def contributors_for_all_repos
-  reset_user_statistics
   all_contributors = []
     @repositories.each do |repo|
       params = @github_service.get_repo_contributors(repo.name)
@@ -32,6 +31,7 @@ class ContributorIndexService
   end
 
   def create_statistics_for_all_users
+    reset_user_statistics
     contributors_for_all_repos.each do |contributor|
       user = User.find_or_create_by(username: contributor.username)
       user.user_stats.first.increment!(:lines_added, contributor.added_this_week)
