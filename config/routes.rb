@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :home, only: [:index]
-  resources :user, only: [:show]
+  resources :user, only: [:index, :show]
   resources :repositories, only: [:index, :show]
 
   delete "remove_pm", to: 'project_managers#remove_pm', as: "remove_pm"
