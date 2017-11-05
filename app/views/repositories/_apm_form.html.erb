@@ -7,7 +7,7 @@
     </tr>
     <tr>
       <th> <%= image_tag @apm.image_path, size: "30x30" %> </th>
-      <th> Project Manager: <%= @apm.name %> </th>
+      <th> Assistant Project Manager: <%= @apm.name %> </th>
       <th> <%= form_tag(:controller => 'project_managers', :action => 'update_apm') do %>
       <%= select_tag "APM", options_from_collection_for_select(@users, 'id', 'name') %>
       <%= submit_tag("Set APM", id: "set_apm") %> </th>
