@@ -4,8 +4,9 @@ class UserController < ApplicationController
   end
 
   def index
-    contributor_index_service.contributors_for_all_repos
-    @contributors = User.all
+    contributor_index_service.create_statistics_for_all_users
+    @commit_data = contributor_index_service.commit_data_for_chart
+    @users = User.all
   end
 
   private

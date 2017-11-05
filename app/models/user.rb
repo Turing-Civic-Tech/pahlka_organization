@@ -10,6 +10,18 @@ class User < ApplicationRecord
     )
   end
 
+  def commits
+    user_stats.first.commits
+  end
+
+  def lines_added
+    user_stats.first.lines_added
+  end
+
+  def lines_deleted
+    user_stats.first.lines_deleted
+  end
+
   def self.find_or_create_from_auth_hash(auth_hash)
     username = auth_hash["info"]["nickname"]
     token = auth_hash["credentials"]["token"]

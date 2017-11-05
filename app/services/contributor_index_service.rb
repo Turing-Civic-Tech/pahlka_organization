@@ -39,4 +39,22 @@ class ContributorIndexService
       user.user_stats.first.increment!(:commits, contributor.commits_this_week)
     end
   end
+
+  def users_and_commits
+    User
+    .joins(:user_stats)
+    .select('commits AS user_commits, users.username')
+    .order('user_commits DESC')
+  end
+
+  def commit_data_for_chart
+    array = []
+    array << ["Contributor", "Commits"]
+    users_and_commits.map do |user|
+      nested_array = []
+      nested_array << user.username.to_s << user.user_commits.to_i
+      array << nested_array
+    end
+    array
+  end
 end
