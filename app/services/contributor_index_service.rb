@@ -69,7 +69,6 @@ class ContributorIndexService
     array
   end
 
-
   def commit_data_for_chart
     array = []
     array << ["Contributor", "Commits"]
