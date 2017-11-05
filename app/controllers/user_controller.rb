@@ -5,8 +5,15 @@ class UserController < ApplicationController
 
   def index
     contributor_index_service.create_statistics_for_all_users
-    @commit_data = contributor_index_service.commit_data_for_chart
     @users = User.all
+  end
+
+  def commits_chart
+    @commit_data = contributor_index_service.commit_data_for_chart
+  end
+
+  def additions_chart
+    @additons_deletions_data = contributor_index_service.added_and_deleted_for_chart
   end
 
   private

@@ -43,9 +43,32 @@ class ContributorIndexService
   def users_and_commits
     User
     .joins(:user_stats)
-    .select('commits AS user_commits, users.username')
+    .select('commits AS user_commits,
+
+       users.username')
     .order('user_commits DESC')
   end
+
+  def users_and_additons_and_deletions
+    User
+    .joins(:user_stats)
+    .select('lines_added AS user_lines_added,
+         lines_deleted AS user_lines_deleted,
+         users.username')
+    .order('user_lines_added DESC')
+  end
+
+  def added_and_deleted_for_chart
+    array = []
+    array << ["Contributor", "Additions", "Deletions"]
+    users_and_additons_and_deletions.map do |user|
+      nested_array = []
+      nested_array << user.username.to_s << user.user_lines_added.to_i << user.user_lines_deleted.to_i
+      array << nested_array
+    end
+    array
+  end
+
 
   def commit_data_for_chart
     array = []

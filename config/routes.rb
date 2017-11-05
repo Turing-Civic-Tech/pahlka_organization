@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'home#index'
 
+  get 'commits_chart', to: 'user#commits_chart', as: "commits_chart"
+  get 'additions_chart', to: 'user#additions_chart', as: "additions_chart"
+
   resources :home, only: [:index]
   resources :user, only: [:index, :show]
   resources :repositories, only: [:index, :show]
