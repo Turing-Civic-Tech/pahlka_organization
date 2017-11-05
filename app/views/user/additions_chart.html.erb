@@ -3,7 +3,7 @@
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      var additions_array = <%= raw @additons_deletions_data %>
+      var additions_array = <%= raw @additions_deletions_data %>
       google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart);
 
@@ -17,7 +17,7 @@
             title: 'Additons and Deletions by User',
             subtitle: 'Additions and deletions by user this week.',
           },
-          bars: 'horizontal' // Required for Material Bar Charts.
+          bars: 'horizontal', // Required for Material Bar Charts.
           height: 400,
           colors: ['green', 'red']
         };
