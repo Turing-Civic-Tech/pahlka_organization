@@ -4,7 +4,7 @@ class UserController < ApplicationController
   end
 
   def index
-    GraphInfoJob.perform_later(github_service)
+    # GraphInfoJob.perform_later(github_service)
     contributor_index_service.create_statistics_for_all_users
     @users = User.all
   end
