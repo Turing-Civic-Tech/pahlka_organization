@@ -1,5 +1,4 @@
 class ProjectManagerService
-
   def unassign_pm(repo)
     user = User.find_by(role: "PM", repository_name: repo)
     if user
@@ -29,7 +28,7 @@ class ProjectManagerService
   end
 
   def placeholder
-    User.new(username: "Bob Huggins", image_path: "BobHuggins.jpg")
+    User.new(name: "Bob Huggins", image_path: "BobHuggins.jpg")
   end
 
   def pm_for_repo(repo)
