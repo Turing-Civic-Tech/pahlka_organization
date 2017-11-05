@@ -5,7 +5,7 @@ class UserController < ApplicationController
 
   def index
     generate_graph_data
-    @users = User.all
+    @users = User.active_users_this_week
   end
 
   def commits_chart

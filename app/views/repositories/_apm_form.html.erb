@@ -1,8 +1,18 @@
-<p> <%= image_tag @apm.image_path, size: "30x30" %>
-  Assistant Project Manager: <%= @apm.name %> </p>
-  <%= form_tag(:controller => 'project_managers', :action => 'update_apm') do %>
-  <li> Set APM: <%= select_tag "APM", options_from_collection_for_select(@users, 'id', 'name') %></li>
-  <%= hidden_field_tag :repo_name, @repo %>
-  <li>  <%= submit_tag("Set APM", id: "set_apm") %> </li>
-  <%= link_to 'Remove APM', remove_apm_path(repo_name: @repo), method: :delete %>
-  <% end %>
+  <table>
+    <tr>
+      <th> APM </th>
+      <th> Name </th>
+      <th> Change </th>
+      <th> Remove </th>
+    </tr>
+    <tr>
+      <th> <%= image_tag @apm.image_path, size: "30x30" %> </th>
+      <th> Assistant Project Manager: <%= @apm.name %> </th>
+      <th> <%= form_tag(:controller => 'project_managers', :action => 'update_apm') do %>
+      <%= select_tag "APM", options_from_collection_for_select(@users, 'id', 'name') %>
+      <%= submit_tag("Set APM", id: "set_apm") %> </th>
+      <th> <%= link_to 'Remove APM', remove_apm_path(repo_name: @repo), method: :delete %> </th>
+      <%= hidden_field_tag :repo_name, @repo %>
+      <% end %>
+    </tr>
+  </table>

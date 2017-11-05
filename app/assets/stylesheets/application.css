@@ -176,7 +176,21 @@ input {
 
 .cancel:hover {
   cursor: pointer;
-}/*
+}
+
+.repotable {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
