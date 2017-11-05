@@ -1,0 +1,14 @@
+<h3>test</h3>
+
+<% @users.each_with_index do |user, index| %>
+<p class="user_profile user_<%= index + 1 %>">
+  Name: <%= user.name %>
+  Username: <%= user.username %>
+  Commits: <%= user.commits %>
+  Lines_added: <%= user.lines_added %>
+  Lines_deleted: <%= user.lines_deleted %>
+  </p>
+<% end %>
+
+<%= link_to 'Commits', commits_chart_path %>
+<%= link_to 'Additons/Deletions', additions_chart_path %>

@@ -24,6 +24,7 @@ class RepositoriesController < ApplicationController
     @github_service ||= GithubService.new(current_user.token, "Turing-Civic-Tech", current_user.username)
   end
 
+
   def repository_service(response)
     @repository_service ||= RepositoryService.new(response)
   end

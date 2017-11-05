@@ -1,5 +1,4 @@
 class ProjectManagersController < ApplicationController
-
   def remove_pm
     User.unassign_pm(repo_params[:repo_name])
     redirect_back(fallback_location: root_path)

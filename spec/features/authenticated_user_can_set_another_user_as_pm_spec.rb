@@ -3,10 +3,10 @@ require 'rails_helper'
 feature "An authenticated user can view their dashboard" do
   it "shows their dashboard page and lets them update PM and APM" do
   visit github_login_path
-  click_on "repositories"
+  click_on "REPOSITORIES"
 
   click_on "repo_1"
-  save_and_open_page
+
   expect(page).to have_button('Set PM')
   expect(page).to have_button('Set APM')
 

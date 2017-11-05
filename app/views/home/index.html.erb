@@ -1,18 +1,3 @@
-<!-- <h3>Home Page</h3> -->
-<nav>
-  <a href="https://turing.io" target="_blank"><img class="turing-logo" src="../../assets/images/turing-logo.png" alt="Turing School of Software and Design Logo"></a>
-
-  <ul>
-    <li class="nav-menu-item"><a href="../../" class="nav-link">ABOUT</a></li><li class="nav-menu-item">
-      <a class="nav-link" href="../../repositories">PROJECTS</a></li><li class="nav-menu-item">
-      <a class="nav-link" href="">EVENTS</a></li><li class="nav-menu-item">
-      <a class="nav-link" href="../../user/1">JOIN</a></li><li class="login-link nav-menu-item">LOGIN</li>
-  </ul>
-</nav>
-
-
-<p class="github-link"><%= link_to "log in with github", github_login_path %></p>
-
 <h1>Pahlka Student Group</h1>
 <section class="about-us-section">
   <img class="pahlka-img" src="https://media.npr.org/assets/img/2013/12/17/jenniferpahlka_2012-stageshot_wide-fae5a027471a968d817bbd2fd5947113f096307c.jpg?s=1400" alt="Jennifer Pahlka Speaking">
@@ -29,29 +14,6 @@
     </article>
 </section>
 
-
-<div class="modal-background">
-    <div class="modal-content">
-      <div class="cancel">x</div>
-      <form action="">
-        <div class="input-label-div">
-          <label for="username-input">Username: </label>
-          <input type="text" id="username-input">
-        </div>
-        <div class="input-label-div">
-          <label for="password-input">Password: </label>
-          <input type="password" id="password-input">
-        </div>
-        <div class="btn-div">
-          <button class="login-submit-btn login-btn">Log in</button>
-          <button class="github-login-btn login-btn">
-            <%= link_to "Log in with GitHub", github_login_path %>
-            <i class="fa fa-github" aria-hidden="true"></i>
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="../assets/javascripts/application.js"></script>
