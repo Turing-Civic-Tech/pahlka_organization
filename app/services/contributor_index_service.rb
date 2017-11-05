@@ -57,7 +57,7 @@ class ContributorIndexService
     .order('user_lines_added DESC')
   end
 
-  def added_and_deleted_for_chart
+  def create_added_and_deleted_for_chart
     array = []
     array << ["Contributor", "Additions", "Deletions"]
     users_and_additons_and_deletions.map do |user|
@@ -66,14 +66,14 @@ class ContributorIndexService
       array << nested_array
     end
     if GraphDatum.first
-      GraphDatum.update(commits: array.to_json )
+      GraphDatum.update(add_delete: array.to_json )
     else
-      GraphDatum.create(commits: array.to_json )
+      GraphDatum.create(add_delete: array.to_json )
     end
   end
 
 
-  def commit_data_for_chart
+  def create_commit_data_for_chart
     array = []
     array << ["Contributor", "Commits"]
     users_and_commits.map do |user|
@@ -82,9 +82,9 @@ class ContributorIndexService
       array << nested_array
     end
     if GraphDatum.first
-      GraphDatum.update(add_delete: array.to_json )
+      GraphDatum.update(commits: array.to_json )
     else
-      GraphDatum.create(add_delete: array.to_json )
+      GraphDatum.create(commits: array.to_json )
     end
   end
 end
