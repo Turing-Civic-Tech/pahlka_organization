@@ -10,7 +10,7 @@ class RepositoriesController < ApplicationController
     @apm = pm_service.apm_for_repo(@repo)
     @users = User.all
     contributor_response = github_service.get_repo_contributors(@repo)
-    @contributors = contributor_service(contributor_response).contributors
+    @contributors = contributor_service(contributor_response).contributors_sorted_by_commits
     @open_pull_requests = github_service.get_repo_open_pull_requests(@repo).count
   end
 
