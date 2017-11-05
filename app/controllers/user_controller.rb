@@ -13,7 +13,7 @@ class UserController < ApplicationController
   end
 
   def additions_chart
-    @additons_deletions_data = GraphDatum.first.add_delete
+    @additions_deletions_data = GraphDatum.first.add_delete
   end
 
   private
