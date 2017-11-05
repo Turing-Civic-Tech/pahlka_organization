@@ -66,7 +66,7 @@ class ContributorIndexService
       nested_array << user.username.to_s << user.user_lines_added.to_i << user.user_lines_deleted.to_i
       array << nested_array
     end
-    array
+    array.to_json
   end
 
 
@@ -78,6 +78,6 @@ class ContributorIndexService
       nested_array << user.username.to_s << user.user_commits.to_i
       array << nested_array
     end
-    array
+    array.to_json
   end
 end
