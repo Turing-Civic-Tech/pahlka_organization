@@ -10,6 +10,11 @@ class User < ApplicationRecord
     )
   end
 
+  def self.active_users_this_week
+    joins(:user_stats)
+    .where('user_stats.lines_added + user_stats.lines_deleted + user_stats.commits > 0')
+  end
+
   def commits
     user_stats.first.commits
   end
