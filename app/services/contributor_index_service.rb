@@ -60,7 +60,7 @@ class ContributorIndexService
   def create_added_and_deleted_for_chart
     array = []
     array << ["Contributor", "Additions", "Deletions"]
-    users_and_additons_and_deletions.map do |user|
+    users_and_additons_and_deletions.each do |user|
       nested_array = []
       nested_array << user.username.to_s << user.user_lines_added.to_i << user.user_lines_deleted.to_i
       array << nested_array
@@ -75,7 +75,7 @@ class ContributorIndexService
   def create_commit_data_for_chart
     array = []
     array << ["Contributor", "Commits"]
-    users_and_commits.map do |user|
+    users_and_commits.each do |user|
       nested_array = []
       nested_array << user.username.to_s << user.user_commits.to_i
       array << nested_array
