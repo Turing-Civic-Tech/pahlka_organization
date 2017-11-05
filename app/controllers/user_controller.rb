@@ -4,20 +4,25 @@ class UserController < ApplicationController
   end
 
   def index
-    GraphInfoJob.perform_later(current_user.token, "Turing-Civic-Tech", current_user.username)
-    # contributor_index_service.create_statistics_for_all_users
+    generate_graph_data
     @users = User.all
   end
 
   def commits_chart
-    @commit_data = contributor_index_service.commit_data_for_chart
+    @commit_data = GraphDatum.first.commits
   end
 
   def additions_chart
-    @additons_deletions_data = contributor_index_service.added_and_deleted_for_chart
+    @additons_deletions_data = GraphDatum.first.add_delete
   end
 
   private
+
+  def generate_graph_data
+    if !(GraphDatum.first) || (Time.now - 1.hour) > GraphDatum.first.updated_at
+      GraphInfoJob.perform_later(current_user.token, "Turing-Civic-Tech", current_user.username)
+    end
+  end
 
   def github_service
     @github_service ||= GithubService.new(current_user.token, "Turing-Civic-Tech", current_user.username)
