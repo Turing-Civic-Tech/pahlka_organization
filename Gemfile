@@ -34,6 +34,9 @@ gem 'omniauth-github'
 gem 'httparty'
 gem 'simplecov'
 gem 'jquery-rails'
+gem 'sidekiq'
+gem 'hurley'
+gem 'sinatra'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
