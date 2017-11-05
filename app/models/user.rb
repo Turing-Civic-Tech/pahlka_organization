@@ -51,46 +51,4 @@ class User < ApplicationRecord
   def self.part_of_org?(username, token, org)
     GithubService.new(token, org, username).part_of_org?
   end
-
-  #extract to PM service
-
-  def self.unassign_pm(repo)
-    user = self.find_by(role: "PM", repository_name: repo)
-    if user
-      user.update!(role: nil, repository_name: nil)
-    end
-  end
-
-  def self.unassign_apm(repo)
-    user = self.find_by(role: "APM", repository_name: repo)
-    if user
-      user.update!(role: nil, repository_name: nil)
-    end
-  end
-
-  def self.assign_pm(params)
-    update(params[:PM],
-       role: "PM",
-       repository_name: params[:repo_name]
-          )
-  end
-
-  def self.assign_apm(params)
-    update(params[:APM],
-       role: "APM",
-       repository_name: params[:repo_name]
-          )
-  end
-
-  def self.placeholder
-    User.new(username: "Bob Huggins", image_path: "BobHuggins.jpg")
-  end
-
-  def self.pm_for_repo(repo)
-    find_by(role: "PM", repository_name: repo) || placeholder
-  end
-
-  def self.apm_for_repo(repo)
-    find_by(role: "APM", repository_name: repo) || placeholder
-  end
 end

@@ -6,8 +6,8 @@ class RepositoriesController < ApplicationController
 
   def show
     @repo = project_params[:id]
-    @pm = User.pm_for_repo(@repo)
-    @apm = User.apm_for_repo(@repo)
+    @pm = pm_service.pm_for_repo(@repo)
+    @apm = pm_service.apm_for_repo(@repo)
     @users = User.all
     contributor_response = github_service.get_repo_contributors(@repo)
     @contributors = contributor_service(contributor_response).contributors
@@ -15,6 +15,10 @@ class RepositoriesController < ApplicationController
   end
 
   private
+
+  def pm_service
+    @project_manager_service ||= ProjectManagerService.new
+  end
 
   def contributor_service(response)
     @contributor_service ||= ContributorService.new(response)

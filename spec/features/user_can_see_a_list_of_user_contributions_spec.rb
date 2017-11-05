@@ -6,7 +6,7 @@ feature "A user can view top contributors for the overall" do
 
   click_on "CONTRIBUTORS"
 
-  expect(page).to have_css(".user_5")
+  expect(page).to have_css(".user_1")
   expect(page).to have_content(User.last.username)
   expect(page).to have_content(User.last.name)
   expect(page).to have_content(User.last.lines_added)
