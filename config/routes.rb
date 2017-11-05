@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'home#index'
 
+  mount Sidekiq::Web => "/sidekiq"
+
   get 'commits_chart', to: 'user#commits_chart', as: "commits_chart"
   get 'additions_chart', to: 'user#additions_chart', as: "additions_chart"
 
