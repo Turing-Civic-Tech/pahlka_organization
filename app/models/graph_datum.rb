@@ -1,0 +1,2 @@
+class GraphDatum < ApplicationRecord
+end
