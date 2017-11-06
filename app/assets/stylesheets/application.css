@@ -199,6 +199,7 @@ tr:nth-child(even){background-color: #f2f2f2}
     vertical-align: middle;
     margin: auto;
     padding: 0 2px;
+    padding-bottom: 8px;
 }
 
 /* Display the columns below each other instead of side by side on small screens */
@@ -225,7 +226,9 @@ tr:nth-child(even){background-color: #f2f2f2}
 }
 
 .pititle {
-    color: grey;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 8px;
 }
 
 .pibutton {
