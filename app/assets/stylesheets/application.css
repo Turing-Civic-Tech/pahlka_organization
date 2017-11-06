@@ -190,6 +190,63 @@ th, td {
 
 tr:nth-child(even){background-color: #f2f2f2}
 
+/* project index styling */
+
+/* Three columns side by side */
+.picolumn {
+    float: left;
+    width: 32%;
+    vertical-align: middle;
+    margin: auto;
+    padding: 0 2px;
+    padding-bottom: 8px;
+}
+
+/* Display the columns below each other instead of side by side on small screens */
+
+/* Add some shadows to create a card effect */
+
+
+.picard {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Some left and right padding inside the container */
+.picontainer {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+}
+
+/* Clear floats */
+.picontainer::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.pititle {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 8px;
+}
+
+.pibutton {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.pibutton:hover {
+    background-color: #555;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
