@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :user, only: [:index, :show]
   resources :repositories, only: [:index, :show]
 
-  resources :projects, only: [:index, :new]
+  resources :projects, only: [:index, :new, :create]
 
   # get '/pahlka_projects', to: 'projects#index', as: "projects"
 

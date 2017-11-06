@@ -1,0 +1,8 @@
+<%= form_for @project do |f| %>
+  Title : <%= f.text_field :title %><br />
+  Description : <%= f.text_area :description %><br />
+  Image_path : <%= f.text_field :image_path %><br />
+  GitHub URL : <%= f.text_field :github_link %><br />
+  Heroku URL : <%= f.text_field :heroku_link %><br />
+  <%= f.submit %>
+<% end %>
