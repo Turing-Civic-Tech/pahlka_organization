@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :user, only: [:index, :show]
   resources :repositories, only: [:index, :show]
 
+  get '/pahlka_projects', to: 'projects#index', as: "projects"
+
   delete "remove_pm", to: 'project_managers#remove_pm', as: "remove_pm"
   delete "remove_apm", to: 'project_managers#remove_apm', as: "remove_apm"
   post "update_pm", to: 'project_managers#update_pm', as: "update_pm"

@@ -12,15 +12,16 @@
       <a href="https://turing.io" target="_blank"><img class="turing-logo" src="/assets/turing-logo.png" alt="Turing School of Software and Design Logo"></a>
 
       <ul>
-        <li class="nav-menu-item"><a href="" class="nav-link">ABOUT</a></li><li class="nav-menu-item">
-          <a><%= link_to 'REPOSITORIES', repositories_path, class: 'nav-link' %> </a></li><li class="nav-menu-item">
-          <a><%= link_to 'CONTRIBUTORS', user_index_path, class: 'nav-link' %> </li><li class="nav-menu-item">
-          <a class="nav-link" href=""></a></li>
+        <li class="nav-menu-item"><a href="" class="nav-link">ABOUT</a></li>
+        <li class="nav-menu-item"><a><%= link_to 'REPOSITORIES', repositories_path, class: 'nav-link' %> </a></li>
+        <li class="nav-menu-item"><a><%= link_to 'CONTRIBUTORS', user_index_path, class: 'nav-link' %> </a></li>
+        <li class="nav-menu-item"><a><%= link_to 'PROJECTS', projects_path, class: 'nav-link' %> </a></li>
+        <li class="nav-menu-item">
           <% if current_user %>
-          <a class ="nav-link"> <%= link_to 'HOME', user_path(current_user), class: 'nav-menu-item nav-link' %> </a>
+          <a><%= link_to 'HOME', user_path(current_user), class: 'nav-link' %> </a>
           <% else %>
-          <a class="login-link nav-menu-item nav-link">LOGIN</a>
-          <% end %>
+          <a class="nav-menu-item login-link nav-link">LOGIN</a>
+          <% end %></li>
       </ul>
       <%= render partial: "layouts/login_modal" %>
     </nav>
