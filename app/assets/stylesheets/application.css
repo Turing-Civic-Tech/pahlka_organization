@@ -261,6 +261,10 @@ tr:nth-child(even){background-color: #f2f2f2}
   display: none;
 }
 
+.new_project_pitch {
+  display: none;
+}
+
 .projectbutton {
     float: left;
     align-items: center;

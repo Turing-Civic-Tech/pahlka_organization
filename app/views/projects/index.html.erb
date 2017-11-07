@@ -12,10 +12,9 @@ Show Projects Under Review
 Show Proposed Projects
 </button>
 
-<a href="/projects/new"><button class='projectbutton'>
+<button class='show_project_pitch projectbutton'>
   New Project Pitch
 </button>
-</a>
 
 <br />
 <br />
@@ -34,24 +33,38 @@ Show Proposed Projects
   <%= render partial: "projects_under_review" %>
 </div>
 
+<div class="new_project_pitch">
+  <%= render partial: "new_project" %>
+</div>
+
 <script>
 $(document).ready(function() {
   $('.show_accepted_projects').on('click', function() {
      $('.accepted_projects').show();
      $('.projects_under_review').hide();
      $('.proposed_projects').hide();
+     $('.new_project_pitch').hide();
   });
 
   $('.show_projects_under_review').on('click', function() {
     $('.accepted_projects').hide();
     $('.projects_under_review').show();
     $('.proposed_projects').hide();
+    $('.new_project_pitch').hide();
   });
 
   $('.show_proposed_projects').on('click', function() {
     $('.accepted_projects').hide();
     $('.projects_under_review').hide();
     $('.proposed_projects').show();
+    $('.new_project_pitch').hide();
+  });
+
+  $('.show_project_pitch').on('click', function() {
+    $('.accepted_projects').hide();
+    $('.projects_under_review').hide();
+    $('.proposed_projects').hide();
+    $('.new_project_pitch').show();
   });
 });
 </script>
