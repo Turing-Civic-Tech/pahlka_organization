@@ -274,7 +274,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 .projectbuttoncontainer {
     overflow: hidden;
     width: auto;
-    display: inline;
+    display:inline;
 }
 
 /* Project Index Styling*/
