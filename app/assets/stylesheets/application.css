@@ -247,6 +247,38 @@ tr:nth-child(even){background-color: #f2f2f2}
     background-color: #555;
 }
 
+
+/* Project Index styling */
+.accepted_projects {
+  display: none;
+}
+
+.projects_under_review {
+  display: none;
+}
+
+.proposed_projects {
+  display: none;
+}
+
+.projectbutton {
+    float: left;
+    align-items: center;
+    background-color: #003459;
+    color: #FFFFFF;
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+}
+
+.projectbuttoncontainer {
+    overflow: hidden;
+    width: auto;
+    display: inline;
+}
+
+/* Project Index Styling*/
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

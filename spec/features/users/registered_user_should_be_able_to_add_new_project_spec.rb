@@ -20,9 +20,10 @@ feature "A user can visit our portfolio and see projects" do
 
   click_on "Create Project"
 
-  expect(page).to have_content('BobHuggins.jpg')
   expect(page).to have_content("This is a Project Name")
   expect(page).to have_content("Some text that describes me. Some text that describes me. Some text that describes me.
     Some text that describes me. Some text that describes me. Some text that describes me.")
+  expect(page).to have_link("GitHub")
+  expect(page).to have_link("Heroku")
   end
 end

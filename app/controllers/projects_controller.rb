@@ -1,5 +1,8 @@
 class ProjectsController < ApplicationController
   def index
+    @accepted_projects = Project.accepted
+    @projects_under_review = Project.under_review
+    @proposed_projects = Project.proposed
   end
 
   def new

@@ -6,6 +6,7 @@ class CreateProjects < ActiveRecord::Migration[5.1]
       t.string :description
       t.string :github_link
       t.string :heroku_link
+      t.string :status, :default => 'Proposed'
 
       t.timestamps
     end

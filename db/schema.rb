@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20171106020423) do
     t.string "description"
     t.string "github_link"
     t.string "heroku_link"
+    t.string "status", default: "Proposed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,67 +1,57 @@
 <div class="main">
-
 <h1>Pahlka Posse Projects</h1>
-<hr>
-  <p> <%= link_to "New Project Pitch", new_project_path %> </p>
+<button class='show_accepted_projects projectbutton'>
+Show Accepted Projects
+</button>
+
+<button class='show_projects_under_review projectbutton'>
+Show Projects Under Review
+</button>
+
+<button class='show_proposed_projects projectbutton'>
+Show Proposed Projects
+</button>
+
+<a href="/projects/new"><button class='projectbutton'>
+  New Project Pitch
+</button>
+</a>
+
 <br />
-<div>
-  <div class="picolumn">
-    <div class="picard">
-      <%= image_tag "BobHuggins.jpg", style:"width:100%" %>
-      <div class="picontainer">
-        <h3 class='pititle'> This is a Project Name </h3>
-        <p>Some text that describes me. Some text that describes me. Some text that describes me.
-          Some text that describes me. Some text that describes me. Some text that describes me.
-        </p>
-        <p> <%= link_to 'GitHub', 'https://github.com/Turing-Civic-Tech/pahlka_organization' %>
-            <%= link_to 'Heroku', 'https://heroku.com' %>
-        </p>
-      </div>
-    </div>
-  </div>
+<br />
+<br />
+<hr>
 
-  <div class="picolumn">
-    <div class="picard">
-      <%= image_tag "BobHuggins.jpg", style:"width:100%" %>
-      <div class="picontainer">
-        <h3 class='pititle'> This is a Project Name </h3>
-        <p>Some text that describes me. Some text that describes me. Some text that describes me.
-          Some text that describes me. Some text that describes me. Some text that describes me.
-        </p>
-        <p> <%= link_to 'GitHub', 'https://github.com/Turing-Civic-Tech/pahlka_organization' %>
-            <%= link_to 'Heroku', 'https://heroku.com' %>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="picolumn">
-    <div class="picard">
-      <%= image_tag "BobHuggins.jpg", style:"width:100%" %>
-      <div class="picontainer">
-        <h3 class='pititle'> This is a Project Name </h3>
-        <p>Some text that describes me. Some text that describes me. Some text that describes me.
-          Some text that describes me. Some text that describes me. Some text that describes me.
-        </p>
-        <p> <%= link_to 'GitHub', 'https://github.com/Turing-Civic-Tech/pahlka_organization' %>
-            <%= link_to 'Heroku', 'https://heroku.com' %>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="picolumn">
-    <div class="picard">
-      <%= image_tag "BobHuggins.jpg", style:"width:100%" %>
-      <div class="picontainer">
-        <h3 class='pititle'> This is a Project Name </h3>
-        <p>Some text that describes me. Some text that describes me. Some text that describes me.
-          Some text that describes me. Some text that describes me. Some text that describes me.
-        </p>
-        <p> <%= link_to 'GitHub', 'https://github.com/Turing-Civic-Tech/pahlka_organization' %>
-            <%= link_to 'Heroku', 'https://heroku.com' %>
-        </p>
-      </div>
-    </div>
-  </div>
+<div class="accepted_projects">
+  <%= render partial: "accepted_projects" %>
 </div>
+
+<div class="proposed_projects">
+  <%= render partial: "proposed_projects" %>
+</div>
+
+<div class="projects_under_review">
+  <%= render partial: "projects_under_review" %>
+</div>
+
+<script>
+$(document).ready(function() {
+  $('.show_accepted_projects').on('click', function() {
+     $('.accepted_projects').show();
+     $('.projects_under_review').hide();
+     $('.proposed_projects').hide();
+  });
+
+  $('.show_projects_under_review').on('click', function() {
+    $('.accepted_projects').hide();
+    $('.projects_under_review').show();
+    $('.proposed_projects').hide();
+  });
+
+  $('.show_proposed_projects').on('click', function() {
+    $('.accepted_projects').hide();
+    $('.projects_under_review').hide();
+    $('.proposed_projects').show();
+  });
+});
+</script>
