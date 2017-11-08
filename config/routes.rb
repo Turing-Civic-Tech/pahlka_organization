@@ -14,6 +14,12 @@ Rails.application.routes.draw do
 
   resources :projects
 
+  post '/projects/:id/accepted', to: 'projects#accept', as: 'accept_project'
+  post '/projects/:id/under_review', to: 'projects#review', as: 'review_project'
+
+  @accepted_projects = Project.accepted
+  @projects_under_review = Project.under_review
+  @proposed_projects = Project.proposed
   # get '/pahlka_projects', to: 'projects#index', as: "projects"
 
   delete "remove_pm", to: 'project_managers#remove_pm', as: "remove_pm"

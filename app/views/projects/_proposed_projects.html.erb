@@ -13,6 +13,7 @@
         </p>
         <%= button_to "Edit", edit_project_path(project), class: 'projectbutton'  %>
         <%= button_to "Delete", project_path(project), method: :delete, class: 'projectbutton', :data => {:confirm => "Really delete #{project.title}?"} %>
+        <%= button_to "Review", review_project_path(project), method: :post, class: 'projectbutton', :data => {:confirm => "Mark #{project.title} as under review?"} %>
       </div>
     </div>
   </div>

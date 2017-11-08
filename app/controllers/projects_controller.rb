@@ -27,6 +27,16 @@ class ProjectsController < ApplicationController
     redirect_to projects_path
   end
 
+  def accept
+    Project.update(params[:id], status: "Accepted")
+    redirect_to projects_path
+  end
+
+  def review
+    Project.update(params[:id], status: "Under_review")
+    redirect_to projects_path
+  end
+
   private
 
   def project_params
