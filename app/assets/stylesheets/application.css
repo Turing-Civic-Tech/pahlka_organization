@@ -258,11 +258,15 @@ tr:nth-child(even){background-color: #f2f2f2}
 }
 
 .proposed_projects {
-  display: none;
+  display: none
 }
 
 .new_project_pitch {
   display: none;
+}
+
+.edit_project {
+
 }
 
 .projectbutton {
@@ -280,6 +284,7 @@ tr:nth-child(even){background-color: #f2f2f2}
     width: auto;
     display:inline;
 }
+
 
 /* Project Index Styling*/
 
