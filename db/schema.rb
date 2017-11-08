@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171105031601) do
+ActiveRecord::Schema.define(version: 20171106020423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,17 @@ ActiveRecord::Schema.define(version: 20171105031601) do
   create_table "graph_data", force: :cascade do |t|
     t.json "commits"
     t.json "add_delete"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "image_path"
+    t.string "title"
+    t.string "description"
+    t.string "github_link"
+    t.string "heroku_link"
+    t.string "status", default: "Proposed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

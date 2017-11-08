@@ -1,0 +1,21 @@
+<%= form_for @project do |f| %>
+<div class="projectformcontainer">
+  <div class="picolumn">
+    <div class="picard">
+      <div>
+        <h3> Title: <%= f.text_field :title %> </h3>
+        <br />
+        Screenshot: <%= f.file_field :image_path %>
+        Description:
+        <br />
+        <%= f.text_area :description, size: '53x15' %>
+        <br />
+        GitHub URL: <%= f.text_field :github_link %>
+        <br />
+        Heroku URL : <%= f.text_field :heroku_link %>
+      </div>
+    </div>
+    <%= f.submit class: 'projectbutton' %>
+  </div>
+</div>
+<% end %>
