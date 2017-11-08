@@ -12,6 +12,11 @@ class SessionsController < ApplicationController
     end
   end
 
+  def logout
+    session.destroy
+    redirect_to :root
+  end
+
   protected
 
   def auth_hash

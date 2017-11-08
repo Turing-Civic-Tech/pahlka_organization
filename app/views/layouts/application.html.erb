@@ -12,16 +12,16 @@
       <a href="https://turing.io" target="_blank"><img class="turing-logo" src="/assets/turing-logo.png" alt="Turing School of Software and Design Logo"></a>
 
       <ul>
-        <li class="nav-menu-item"><a href="" class="nav-link">ABOUT</a></li>
+        <li class="nav-menu-item"><a><%= link_to 'HOME', root_path, class: 'nav-link' %></a></li>
         <li class="nav-menu-item"><a><%= link_to 'REPOSITORIES', repositories_path, class: 'nav-link' %> </a></li>
         <li class="nav-menu-item"><a><%= link_to 'CONTRIBUTORS', user_index_path, class: 'nav-link' %> </a></li>
         <li class="nav-menu-item"><a><%= link_to 'PROJECTS', projects_path, class: 'nav-link' %> </a></li>
-        <li class="nav-menu-item">
-          <% if current_user %>
-          <a><%= link_to 'HOME', user_path(current_user), class: 'nav-link' %> </a>
-          <% else %>
-          <a class="nav-menu-item login-link nav-link">LOGIN</a>
-          <% end %></li>
+        <% if current_user %>
+        <li class="nav-menu-item"><a><%= link_to 'LOGOUT', logout_path, class: 'nav-link' %> </a></li>
+        <% else %>
+        <li class="nav-menu-item"><a class="login-link ">LOGIN</a></li>
+        <% end %>
+
       </ul>
       <%= render partial: "layouts/login_modal" %>
     </nav>
