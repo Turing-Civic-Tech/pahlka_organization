@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   resources :projects
 
+  get '/user/logout', to: 'sessions#logout', as: 'logout'
+
   post '/projects/:id/accepted', to: 'projects#accept', as: 'accept_project'
   post '/projects/:id/under_review', to: 'projects#review', as: 'review_project'
 
