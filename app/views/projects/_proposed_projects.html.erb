@@ -11,7 +11,7 @@
         <p> <%= link_to 'GitHub', project.github_link %>
             <%= link_to 'Heroku', project.heroku_link %>
         </p>
-        <%= button_to "Edit", edit_project_path(project), class: 'projectbutton'  %>
+        <%= button_to "Edit", edit_project_path(project), class: 'projectbutton', method: :get  %>
         <%= button_to "Delete", project_path(project), method: :delete, class: 'projectbutton', :data => {:confirm => "Really delete #{project.title}?"} %>
         <%= button_to "Review", review_project_path(project), method: :post, class: 'projectbutton', :data => {:confirm => "Mark #{project.title} as under review?"} %>
       </div>
