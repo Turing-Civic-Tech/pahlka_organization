@@ -21,6 +21,5 @@
   </tr>
 </table>
 <h3> Dashboard </h3>
-<%= link_to 'Commits This Week', commits_chart_path %>
-<br />
-<%= link_to 'Additions/Deletions This Week', additions_chart_path %>
+<%= button_to 'Commits This Week', commits_chart_path, class: 'projectbutton', method: :get %>
+<%= button_to 'Additions/Deletions This Week', additions_chart_path, class: 'projectbutton', method: :get %>
