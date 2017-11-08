@@ -13,6 +13,8 @@
         </p>
         <%= link_to "Edit", edit_project_path(project) %>
       </div>
+      <%= button_to "Edit", edit_project_path(project), class: 'projectbutton'  %>
+      <%= button_to "Delete", project_path(project), method: :delete, class: 'projectbutton', :data => {:confirm => "Really delete #{project.title}?"} %>
     </div>
   </div>
 </div>
