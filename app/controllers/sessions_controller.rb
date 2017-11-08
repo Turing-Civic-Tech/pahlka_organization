@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     if @user
       session[:uid] = @user.uid
       flash[:message] = "Welcome, #{current_user.name}"
-      redirect_to @user
+      redirect_to :root
     else
       flash[:message] = "You must be a part of the Turing-Civic-Tech GitHub
       organization to access this part of the site"
