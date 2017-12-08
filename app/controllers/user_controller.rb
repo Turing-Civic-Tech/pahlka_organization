@@ -21,6 +21,7 @@ class UserController < ApplicationController
   def generate_graph_data
     if !(GraphDatum.first) || (Time.now - 1.hour) > GraphDatum.first.updated_at
       GraphInfoJob.perform_later(current_user.token, "Turing-Civic-Tech", current_user.username)
+      #organization table / dropdown with user orgs
     end
   end
 

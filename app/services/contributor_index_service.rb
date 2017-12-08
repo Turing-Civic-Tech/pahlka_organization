@@ -21,6 +21,7 @@ class ContributorIndexService
   def reset_user_statistics
     contributors_for_all_repos.each do |contributor|
       user = User.find_or_create_by(username: contributor.username)
+      #add an update here
         user.user_stats.destroy_all
         user.user_stats.create(
             lines_added: 0,
@@ -65,7 +66,7 @@ class ContributorIndexService
       nested_array << user.username.to_s << user.user_lines_added.to_i << user.user_lines_deleted.to_i
       array << nested_array
     end
-    if GraphDatum.first
+    if GraphDatum.first#.present?
       GraphDatum.update(add_delete: array.to_json )
     else
       GraphDatum.create(add_delete: array.to_json )
